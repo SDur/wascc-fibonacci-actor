@@ -1,8 +1,8 @@
 [package]
-name = "uppercase"
-version = "0.3.0"
-authors = ["Brian Ketelsen <mail@bjk.fyi"]
-edition = "2018"
+name = "fibonacci"
+version = "0.1.0"
+authors = ["Sjoerd During <sjoerd.during@jcore.com>"]
+edition = "2020"
 
 [lib]
 crate-type = ["cdylib"]
@@ -12,6 +12,7 @@ log = '0.4.8'
 serde = { version = "1.0.104", features = ["derive"]}
 wascc-actor = "0.7"
 wascc-codec = "0.7"
+tramp = “0.3.0”
 
 [profile.release]
 opt-level = "s"

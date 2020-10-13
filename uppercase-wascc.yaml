@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: uppercase
+  name: fibonacci
   labels:
-    app: uppercase
+    app: fibonacci
 spec:
   containers:
-    - image: webassembly.azurecr.io/uppercase-wascc:v0.3
+    - image: eu.gcr.io/sjoerd-specialisatie/fibonacci-wascc:v0.1
       imagePullPolicy: Always
-      name: uppercase
+      name: fibonacci
       ports:
         - containerPort: 8080
           hostPort: 8080

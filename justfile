@@ -4,8 +4,8 @@ TARGET  := "target/wasm32-unknown-unknown"
 DEBUG   := TARGET + "/debug"
 RELEASE := TARGET + "/release"
 KEYDIR  := ".keys"
-VERSION := "0.3"
-NAME    := "uppercase"
+VERSION := "0.1"
+NAME    := ""
 
 all: build
 
