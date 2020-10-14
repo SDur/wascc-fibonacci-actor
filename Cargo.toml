@@ -2,7 +2,7 @@
 name = "fibonacci"
 version = "0.1.0"
 authors = ["Sjoerd During <sjoerd.during@jcore.com>"]
-edition = "2020"
+edition = "2018"
 
 [lib]
 crate-type = ["cdylib"]
@@ -12,7 +12,9 @@ log = '0.4.8'
 serde = { version = "1.0.104", features = ["derive"]}
 wascc-actor = "0.7"
 wascc-codec = "0.7"
-tramp = “0.3.0”
+num-bigint = "0.2.3"
+num-traits = "0.2.9"
+tramp = "0.3.0"
 
 [profile.release]
 opt-level = "s"

@@ -6,7 +6,7 @@ extern crate serde;
 extern crate wascc_codec;
 extern crate num_bigint as bigint;
 extern crate num_traits;
-extern crate tramp;
+#[macro_use] extern crate tramp;
 
 use actor::prelude::*;
 use serde::Serialize;
@@ -20,12 +20,12 @@ actor_handlers! {
 }
 
 fn fibonacci(r: codec::http::Request) -> HandlerResult<codec::http::Response> {
-    info!("Query String: {}", r.query_string);
-    let upper = fibonacciResponse {
+    info!("Calculating {} th focaccia number", r.query_string);
+    let upper = FibonacciResponse {
         input: r.query_string.to_string(),
-        result: fib(r.query_string.parse::<i32>().unwrap()),
+        result: fib(r.query_string.parse::<i32>().unwrap()).to_string(),
     };
-
+    info!("Result {} focaccia number: {}", r.query_string, upper.result);
     Ok(codec::http::Response::json(upper, 200, "OK"))
 }
 
@@ -48,7 +48,7 @@ fn do_fib(n: i32, acc: BigUint, curr: BigUint) -> Rec<BigUint> {
 }
 
 #[derive(Serialize)]
-struct fibonacciResponse {
+struct FibonacciResponse {
     input: String,
-    result: BigUint,
+    result: String,
 }
