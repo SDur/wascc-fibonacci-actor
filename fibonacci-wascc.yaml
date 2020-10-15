@@ -6,7 +6,7 @@ metadata:
     app: fibonacci
 spec:
   containers:
-    - image: eu.gcr.io/sjoerd-specialisatie/fibonacci-wascc:v0.1
+    - image: eu.gcr.io/sjoerd-specialisatie/fibonacci:v0.1
       imagePullPolicy: Always
       name: fibonacci
       ports:
